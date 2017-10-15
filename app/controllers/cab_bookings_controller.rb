@@ -1,0 +1,2 @@
+class CabBookingsController < ApplicationController
+end
