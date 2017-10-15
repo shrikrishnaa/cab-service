@@ -46,6 +46,6 @@ class CabsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def cab_params
-      params.fetch(:cab, {})
+      params.fetch(:cab).permit(:name,:model,:color,:latitude,:longitude,:available_status,:number)
     end
 end
