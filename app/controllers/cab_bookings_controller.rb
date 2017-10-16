@@ -24,7 +24,7 @@ class CabBookingsController < ApplicationController
     @travel_detail = TravelDetail.find(params[:cab_booking][:booking_id])
     @travel_detail.start_time = Time.now
     if @travel_detail.update(start_travel_params)
-      render json: @travel_detail, status: :created
+      render json: @travel_detail
     else
       render json: @travel_detail.errors, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class CabBookingsController < ApplicationController
     @travel_detail = TravelDetail.find(params[:cab_booking][:booking_id])
     @travel_detail.end_time = Time.now
     if @travel_detail.update(finish_travel_params)
-      render json: @travel_detail, status: :created
+      render json: @travel_detail
     else
       render json: @travel_detail.errors, status: :unprocessable_entity
     end
